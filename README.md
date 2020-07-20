@@ -5,5 +5,8 @@ Matlab workflow for going from CMIP model output to projected retreat and submar
 ### Convert and process netcdf CMIP output into .mat files
 ```process_CMIP/```
 
+### Combine projected thermal forcing and subglacial runoff into projected submarine melt rate for each glacier in Greenland
+```glaciers/```
+
 ### Takes projected submarine melt rates and converts into projected retreat
 ```final_projections/```
