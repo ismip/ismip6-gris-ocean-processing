@@ -9,7 +9,7 @@ Matlab workflow for going from CMIP model output to projected retreat and submar
 ```glaciers/```
 
 ### Contains the definition polygons for the 7 ice-ocean sectors
-```final_region_def```
+```final_region_def/```
 
 ### Takes projected submarine melt rates and converts into projected retreat
 ```final_projections/```
