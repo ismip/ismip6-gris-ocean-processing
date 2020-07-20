@@ -14,7 +14,7 @@ yr0 = 2014;
 %% calculate retreat
 
 % load glaciers
-load ../../data/terminus_positions/glaciers.mat
+load ../glaciers/glaciers.mat
 for ii=1:length(glaciers),
     iceflux(ii) = glaciers(ii).iceflux.final;
 end
