@@ -8,5 +8,8 @@ Matlab workflow for going from CMIP model output to projected retreat and submar
 ### Combine projected thermal forcing and subglacial runoff into projected submarine melt rate for each glacier in Greenland
 ```glaciers/```
 
+### Contains the definition polygons for the 7 ice-ocean sectors
+```final_region_def```
+
 ### Takes projected submarine melt rates and converts into projected retreat
 ```final_projections/```
