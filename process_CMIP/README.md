@@ -10,3 +10,6 @@ Matlab script to do the required processing - see in file for detailed workflow 
 
 ## .mat files
 Contain thermal forcing time series for the indicated models and scenarios.
+
+## latlon2utm.m
+Coordinate conversion from lat-lon (as provided in CMIP output) to UTM coordinates used in BedMachine
