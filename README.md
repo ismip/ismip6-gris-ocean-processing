@@ -16,3 +16,6 @@ Matlab workflow for going from CMIP model output to projected retreat and submar
 
 ### Takes projected submarine melt rates and converts into projected retreat
 ```final_projections/```
+
+### Scripts specific to the submarine melt implementation
+```submarine_melt_implementation/```
