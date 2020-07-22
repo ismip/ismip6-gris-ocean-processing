@@ -1,5 +1,6 @@
-% script to generate forcing files to send to Mathieu
-% for extrapolation into fjords
+%% THIS EXAMPLE CONTAINS ONLY NORESM
+
+% script to generate forcing files for extrapolation into fjords
 % v2 does both temperature and salinity
 clear; close all;
 
@@ -142,7 +143,7 @@ end
 
 % bias correction based on mean 200-500m properties over 1995-2014
 % load EN4
-load('~/Google Drive/data/EN4/highres_bias_correction/EN4_ISMIP6_highres.mat');
+load('EN4_ISMIP6_highres.mat');
 % project EN4 onto regular z grid
 for i=1:7,
     Tbaseline(i,:) = interp1(regions(i).depth,regions(i).meansectorT,zreg,'linear','extrap');
