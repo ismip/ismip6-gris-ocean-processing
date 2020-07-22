@@ -14,4 +14,4 @@ Contain sector ocean profiles for use as input to ComputeTF.m
 Does extrapolation of ocean properties into fjords taking account of bathymetry, and saves output in netcdf format
 
 ## latlon2utm.m
-Coordinate conversion from lat-lon (as provided in CMIP output) to UTM coordinates used in BedMachine and ISMIP6
+Coordinate conversion from lat-lon (as provided in CMIP output) to UTM coordinates used in BedMachine
