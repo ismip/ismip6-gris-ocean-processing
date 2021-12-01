@@ -544,22 +544,17 @@ for ii=1:length(glaciers),
 end
 %% associate future runoff from MAR/MIROC5
 
-% load MIROC5-MAR historical run
-load ../runoff/MAR3.9MIROC5histo19502005tidewaterbasinsrignotidwithGlacierIDs.mat
-runoff_histo = runoff;
 % load MIROC5-MAR RCP2.6
-load ../runoff/MAR3.9MIROC5rcp2620062100tidewaterbasinsrignotidwithGlacierIDs.mat
+load ../runoff/MAR3.9-MIROC5-rcp26-JJA_mean-tidewaterbasins_rignotid_withGlacierIDs.mat
 runoff_26 = runoff;
 % load MIROC5-MAR RCP8.5
-load ../runoff/MAR3.9MIROC5rcp8520062100tidewaterbasinsrignotidwithGlacierIDs.mat
+load ../runoff/MAR3.9-MIROC5-rcp85-JJA_mean-tidewaterbasins_rignotid_withGlacierIDs.mat
 runoff_85 = runoff;
 
-% combine into continuous time series for rcp2.6 and rcp8.5
-for ii=1:length(runoff_histo),
-    runoff_26(ii).time = [runoff_histo(ii).time,runoff_26(ii).time];
-    runoff_26(ii).runoff = [runoff_histo(ii).runoff,runoff_26(ii).runoff];
-    runoff_85(ii).time = [runoff_histo(ii).time,runoff_85(ii).time];
-    runoff_85(ii).runoff = [runoff_histo(ii).runoff,runoff_85(ii).runoff];
+% sort time variable
+for ii=1:length(runoff_85),
+    runoff_26(ii).time = [1950:2100];
+    runoff_85(ii).time = [1950:2100];
 end
 
 % assign to glaciers
@@ -568,6 +563,7 @@ for ii=1:length(glaciers),
     for jj=1:length(runoff_26),
         if ismember(glaciers(ii).rignotid,runoff_26(jj).rignotGlacierID),
             glaciers(ii).MIROC5.RCP26.tJJA = runoff_26(jj).time+0.5; % annual mean convention
+            glaciers(ii).MIROC5.RCP26.QJJA = []; 
             for kk=1:length(glaciers(ii).MIROC5.RCP26.tJJA),
                 yr = floor(glaciers(ii).MIROC5.RCP26.tJJA(kk));
                 glaciers(ii).MIROC5.RCP26.QJJA(kk) = 3*runoff_26(jj).runoff(kk)/(86400*sum(eomday(yr,[6:8])));
@@ -578,6 +574,7 @@ for ii=1:length(glaciers),
     for jj=1:length(runoff_85),
         if ismember(glaciers(ii).rignotid,runoff_85(jj).rignotGlacierID),
             glaciers(ii).MIROC5.RCP85.tJJA = runoff_85(jj).time+0.5; % annual mean convention
+            glaciers(ii).MIROC5.RCP85.QJJA = []; 
             for kk=1:length(glaciers(ii).MIROC5.RCP85.tJJA),
                 yr = floor(glaciers(ii).MIROC5.RCP85.tJJA(kk));
                 glaciers(ii).MIROC5.RCP85.QJJA(kk) = 3*runoff_85(jj).runoff(kk)/(86400*sum(eomday(yr,[6:8])));
@@ -604,36 +601,17 @@ for ii=1:length(glaciers),
 end
 %% associate future runoff from MAR/NorESM
 
-% load NorESM-MAR historical run
-load ../runoff/MAR3.9NorESM1histoJJAmeantidewaterbasinsrignotidwithGlacierIDs.mat
-runoff_histo = runoff;
-% load NorESM-MAR RCP2.6
-% load ../runoff/MAR3.9NorESMrcp2620062100tidewaterbasinsrignotidwithGlacierIDs.mat
-% runoff_26 = runoff;
 % load NorESM-MAR RCP8.5
-load ../runoff/MAR3.9NorESM1rcp8520062100tidewaterbasinsrignotidwithGlacierIDs.mat
+load ../runoff/MAR3.9-NorESM1-rcp85-JJA_mean-tidewaterbasins_rignotid_withGlacierIDs.mat
 runoff_85 = runoff;
 
-% combine into continuous time series for rcp2.6 and rcp8.5
-for ii=1:length(runoff_histo),
-%     runoff_26(ii).time = [runoff_histo(ii).time,runoff_26(ii).time];
-%     runoff_26(ii).runoff = [runoff_histo(ii).runoff,runoff_26(ii).runoff];
+% sort time variable
+for ii=1:length(runoff_85),
     runoff_85(ii).time = [1950:2100]; % time variable is off 
-    runoff_85(ii).runoff = [runoff_histo(ii).runoff,runoff_85(ii).runoff];
 end
 
 % assign to glaciers
 for ii=1:length(glaciers),
-%     % rcp2.6
-%     for jj=1:length(runoff_26),
-%         if ismember(glaciers(ii).rignotid,runoff_26(jj).rignotGlacierID),
-%             glaciers(ii).NorESM.RCP26.tJJA = runoff_26(jj).time+0.5; % annual mean convention
-%             for kk=1:length(glaciers(ii).NorESM.RCP26.tJJA),
-%                 yr = floor(glaciers(ii).NorESM.RCP26.tJJA(kk));
-%                 glaciers(ii).NorESM.RCP26.QJJA(kk) = 3*runoff_26(jj).runoff(kk)/(86400*sum(eomday(yr,[6:8])));
-%             end
-%         end
-%     end
     % rcp8.5
     for jj=1:length(runoff_85),
         if ismember(glaciers(ii).rignotid,runoff_85(jj).rignotGlacierID),
@@ -654,21 +632,17 @@ RACMObaselineinds = find(ismember(floor(glaciers(1).RACMO.tJJA),baseline));
 % calculate and account for bias over baseline and add Q baseline
 for ii=1:length(glaciers),
     glaciers(ii).RACMO.Qbaseline = mean(glaciers(ii).RACMO.QJJA(RACMObaselineinds));
-%     glaciers(ii).NorESM.RCP26.bias_QJJA = mean(glaciers(ii).NorESM.RCP26.QJJA(MARbaselineinds)) - mean(glaciers(ii).RACMO.QJJA(RACMObaselineinds));
     glaciers(ii).NorESM.RCP85.bias_QJJA = mean(glaciers(ii).NorESM.RCP85.QJJA(MARbaselineinds)) - mean(glaciers(ii).RACMO.QJJA(RACMObaselineinds));
-%     glaciers(ii).NorESM.RCP26.QJJA = glaciers(ii).NorESM.RCP26.QJJA - glaciers(ii).NorESM.RCP26.bias_QJJA;
     glaciers(ii).NorESM.RCP85.QJJA = glaciers(ii).NorESM.RCP85.QJJA - glaciers(ii).NorESM.RCP85.bias_QJJA;
     % make sure no runoff values less than 0
-%     glaciers(ii).NorESM.RCP26.QJJA(find(glaciers(ii).NorESM.RCP26.QJJA<0)) = 0;
     glaciers(ii).NorESM.RCP85.QJJA(find(glaciers(ii).NorESM.RCP85.QJJA<0)) = 0;
 end
 %% associate future runoff from MAR/CNRM-CM6-1
-
 % load CNRM-CM6-1/MAR ssp126
-load ../runoff/MAR3.9CNRMCM6ssp126JJAmeantidewaterbasinsrignotidwithGlacierIDs.mat
+load ../runoff/MAR3.9-CNRM-CM6-ssp126-JJA_mean-tidewaterbasins_rignotid_withGlacierIDs.mat
 runoff_26 = runoff;
 % load CNRM-CM6-1/MAR ssp585
-load ../runoff/MAR3.9CNRMCM6ssp585JJAmeantidewaterbasinsrignotidwithGlacierIDs.mat
+load ../runoff/MAR3.9-CNRM-CM6-ssp585-JJA_mean-tidewaterbasins_rignotid_withGlacierIDs.mat
 runoff_85 = runoff;
 
 % sort time variable
@@ -948,7 +922,7 @@ end
 %% associate future runoff from MAR/ACCESS
 
 % load ACCESS-1-3 RCP8.5 run
-load ../runoff/MAR3.9ACCESS1.3rcp85JJAmeantidewaterbasinsrignotidwithGlacierIDs.mat
+load ../runoff/MAR3.9-ACCESS1.3-rcp85-JJA_mean-tidewaterbasins_rignotid_withGlacierIDs.mat
 
 % combine into continuous time series for rcp8.5
 for ii=1:length(runoff),
