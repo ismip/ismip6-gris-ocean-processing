@@ -109,7 +109,7 @@ for jj=1:size(TF,2),
 end
 
 % load ice-ocean basin definitions
-load ../../ismip6/final_region_def/ice_ocean_sectors.mat
+load ../final_region_def/ice_ocean_sectors.mat
 
 % find regular grid points inside ice-ocean basins
 basin = NaN(size(Xreg,1),size(Xreg,2));
@@ -227,7 +227,7 @@ for jj=1:size(TF,2),
 end
 
 % load ice-ocean basin definitions
-load ../../ismip6/final_region_def/ice_ocean_sectors.mat
+load ../final_region_def/ice_ocean_sectors.mat
 
 % find regular grid points inside ice-ocean basins
 basin = NaN(size(Xreg,1),size(Xreg,2));
@@ -344,7 +344,7 @@ for jj=1:size(TF,2),
 end
 
 % load ice-ocean basin definitions
-load ../../ismip6/final_region_def/ice_ocean_sectors.mat
+load ../final_region_def/ice_ocean_sectors.mat
 
 % find regular grid points inside ice-ocean basins
 basin = NaN(size(Xreg,1),size(Xreg,2));
@@ -462,7 +462,7 @@ for jj=1:size(TF,2),
 end
 
 % load ice-ocean basin definitions
-load ../../ismip6/final_region_def/ice_ocean_sectors.mat
+load ../final_region_def/ice_ocean_sectors.mat
 
 % find regular grid points inside ice-ocean basins
 basin = NaN(size(Xreg,1),size(Xreg,2));
@@ -571,7 +571,7 @@ for jj=1:size(TF,2),
 end
 
 % load ice-ocean basin definitions
-load ../../ismip6/final_region_def/ice_ocean_sectors.mat
+load ../final_region_def/ice_ocean_sectors.mat
 
 % find regular grid points inside ice-ocean basins
 basin = NaN(size(Xreg,1),size(Xreg,2));
@@ -681,7 +681,7 @@ for jj=1:size(TF,2),
 end
 
 % load ice-ocean basin definitions
-load ../../ismip6/final_region_def/ice_ocean_sectors.mat
+load ../final_region_def/ice_ocean_sectors.mat
 
 % find regular grid points inside ice-ocean basins
 basin = NaN(size(Xreg,1),size(Xreg,2));
@@ -801,7 +801,7 @@ for jj=1:size(TF,2),
 end
 
 % load ice-ocean basin definitions
-load ../../ismip6/final_region_def/ice_ocean_sectors.mat
+load ../final_region_def/ice_ocean_sectors.mat
 
 % find regular grid points inside ice-ocean basins
 basin = NaN(size(Xreg,1),size(Xreg,2));
@@ -928,7 +928,7 @@ for jj=1:size(TF,2),
 end
 
 % load ice-ocean basin definitions
-load ../../ismip6/final_region_def/ice_ocean_sectors.mat
+load ../final_region_def/ice_ocean_sectors.mat
 
 % find regular grid points inside ice-ocean basins
 basin = NaN(size(Xreg,1),size(Xreg,2));
@@ -1046,7 +1046,7 @@ for jj=1:size(TF,2),
 end
 
 % load ice-ocean basin definitions
-load ../../ismip6/final_region_def/ice_ocean_sectors.mat
+load ../final_region_def/ice_ocean_sectors.mat
 
 % find regular grid points inside ice-ocean basins
 basin = NaN(size(Xreg,1),size(Xreg,2));
@@ -1165,7 +1165,7 @@ for jj=1:size(TF,2),
 end
 
 % load ice-ocean basin definitions
-load ../../ismip6/final_region_def/ice_ocean_sectors.mat
+load ../final_region_def/ice_ocean_sectors.mat
 
 % find regular grid points inside ice-ocean basins
 basin = NaN(size(Xreg,1),size(Xreg,2));
@@ -1291,7 +1291,7 @@ for jj=1:size(TF,2),
 end
 
 % load ice-ocean basin definitions
-load ../../ismip6/final_region_def/ice_ocean_sectors.mat
+load ../final_region_def/ice_ocean_sectors.mat
 
 % find regular grid points inside ice-ocean basins
 basin = NaN(size(Xreg,1),size(Xreg,2));
@@ -1418,7 +1418,7 @@ for jj=1:size(TF,2),
 end
 
 % load ice-ocean basin definitions
-load ../../ismip6/final_region_def/ice_ocean_sectors.mat
+load ../final_region_def/ice_ocean_sectors.mat
 
 % find regular grid points inside ice-ocean basins
 basin = NaN(size(Xreg,1),size(Xreg,2));
@@ -1527,7 +1527,7 @@ for jj=1:size(TF,2),
 end
 
 % load ice-ocean basin definitions
-load ../../ismip6/final_region_def/ice_ocean_sectors.mat
+load ../final_region_def/ice_ocean_sectors.mat
 
 % find regular grid points inside ice-ocean basins
 basin = NaN(size(Xreg,1),size(Xreg,2));
@@ -1649,7 +1649,7 @@ for jj=1:size(TF,2),
 end
 
 % load ice-ocean basin definitions
-load ../../ismip6/final_region_def/ice_ocean_sectors.mat
+load ../final_region_def/ice_ocean_sectors.mat
 
 % find regular grid points inside ice-ocean basins
 basin = NaN(size(Xreg,1),size(Xreg,2));
@@ -1773,7 +1773,7 @@ for jj=1:size(TF,2),
 end
 
 % load ice-ocean basin definitions
-load ../../ismip6/final_region_def/ice_ocean_sectors.mat
+load ../final_region_def/ice_ocean_sectors.mat
 
 % find regular grid points inside ice-ocean basins
 basin = NaN(size(Xreg,1),size(Xreg,2));
@@ -1887,7 +1887,7 @@ for jj=1:size(TF,2),
 end
 
 % load ice-ocean basin definitions
-load ../../ismip6/final_region_def/ice_ocean_sectors.mat
+load ../final_region_def/ice_ocean_sectors.mat
 
 % find regular grid points inside ice-ocean basins
 basin = NaN(size(Xreg,1),size(Xreg,2));
@@ -2010,7 +2010,7 @@ for jj=1:size(TF,2),
 end
 
 % load ice-ocean basin definitions
-load ../../ismip6/final_region_def/ice_ocean_sectors.mat
+load ../final_region_def/ice_ocean_sectors.mat
 
 % find regular grid points inside ice-ocean basins
 basin = NaN(size(Xreg,1),size(Xreg,2));
@@ -2133,7 +2133,7 @@ for jj=1:size(TF,2),
 end
 
 % load ice-ocean basin definitions
-load ../../ismip6/final_region_def/ice_ocean_sectors.mat
+load ../final_region_def/ice_ocean_sectors.mat
 
 % find regular grid points inside ice-ocean basins
 basin = NaN(size(Xreg,1),size(Xreg,2));
