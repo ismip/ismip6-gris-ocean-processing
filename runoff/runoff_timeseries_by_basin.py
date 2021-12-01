@@ -151,7 +151,7 @@ MARver = 'MAR3.9'
 CMIP = 'MIROC5' # 'MIROC5' | 'NorESM1' | 'CSIRO-Mk3.6' | 'HadGEM2-ES' | 'IPSL-CM5-MR' | 'ACCESS1.3' | 'CNRM-CM6' | 'UKESM1-CM6' | 'CNRM-ESM2'
 rcp  = 'rcp85'  # 'histo' | 'rcp26' | 'rcp85' | 'ssp126' | 'ssp585'
 
-approach = 'melt-rate' # 'retreat-rate' | 'melt-rate'
+approach = 'retreat-rate' # 'retreat-rate' | 'melt-rate'
 
 multiprocess_flag = False
 
@@ -192,6 +192,7 @@ if approach == 'melt-rate': ##{{{
 # MAR/RACMO directories
 MARdir = 'MAR_DIR'
 RACMOdir = 'RACMO_DIR'
+AUXdir = 'AUX_DIR'
 
 # Output directory
 outputDirectory = '.'
@@ -241,11 +242,11 @@ netcdf_description  = 'Cumulative runoff (' + runoffCalculation + \
 # Drainage basins
 #{{{
 if basinsRaster == 'tidewaterbasins_rignotid':
-   clipfile = 'tidewaterbasins_rignotid.mat_tidewaterbasins.tif'
+   clipfile = AUXdir + '/' + 'tidewaterbasins_rignotid.mat_tidewaterbasins.tif'
    submergedAreaRaster = None
 if basinsRaster == 'basins4highres':
-   clipfile = 'basins4highres_xy.mat_basins_select.tif'
-   submergedAreaRaster = 'basins4highres_xy.mat_submergedarea.tif'
+   clipfile = AUXdir + '/' + 'basins4highres_xy.mat_basins_select.tif'
+   submergedAreaRaster = AUXdir + '/' + 'basins4highres_xy.mat_submergedarea.tif'
    outputUnits = outputUnits + ' m-2'
 
 # All basins
